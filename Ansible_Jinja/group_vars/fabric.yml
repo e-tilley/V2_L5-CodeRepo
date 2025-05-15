@@ -1,0 +1,96 @@
+---
+global_settings: 
+  p2pmtu: 1550
+devices:
+  leaf1:
+    loopbacks:
+      loopback0: 172.16.0.71
+      loopback1: 172.16.1.70
+    p2p:
+      - Ethernet3
+      - Ethernet4
+      - Ethernet5
+      - Ethernet6
+  leaf2:
+    loopbacks:
+      loopback0: 172.16.0.72
+      loopback1: 172.16.1.70
+    p2p: 
+      - Ethernet3
+      - Ethernet4
+      - Ethernet5
+      - Ethernet6
+  leaf3:
+    loopbacks:
+      loopback0: 172.16.0.73
+    p2p: 
+      - Ethernet3
+      - Ethernet4
+      - Ethernet5
+      - Ethernet6
+  leaf4:
+    loopbacks:
+      loopback0: 172.16.0.74
+    p2p: 
+      - Ethernet3
+      - Ethernet4
+      - Ethernet5
+      - Ethernet6
+  spine1:
+    loopbacks:
+      loopback0: 172.16.0.101
+    p2p:
+      - Ethernet3
+      - Ethernet4
+      - Ethernet5
+      - Ethernet6
+      - Ethernet7
+      - Ethernet8
+  spine2:
+    loopbacks:
+      loopback0: 172.16.0.102
+    p2p:
+      - Ethernet3
+      - Ethernet4
+      - Ethernet5
+      - Ethernet6
+      - Ethernet7
+      - Ethernet8
+  spine3:
+    loopbacks:
+      loopback0: 172.16.0.103
+    p2p:
+      - Ethernet3
+      - Ethernet4
+      - Ethernet5
+      - Ethernet6
+      - Ethernet7
+      - Ethernet8
+  spine4:
+    loopbacks:
+      loopback0: 172.16.0.104
+    p2p:
+      - Ethernet3
+      - Ethernet4
+      - Ethernet5
+      - Ethernet6
+      - Ethernet7
+      - Ethernet8
+  borderleaf1:
+    loopbacks:
+      loopback0: 172.16.0.105
+      loopback1: 172.16.0.107
+    p2p:
+      - Ethernet3
+      - Ethernet4
+      - Ethernet5
+      - Ethernet6
+  borderleaf2:
+    loopbacks:
+      loopback0: 172.16.0.106
+      loopback1: 172.16.0.107
+    p2p:
+      - Ethernet3
+      - Ethernet4
+      - Ethernet5
+      - Ethernet6

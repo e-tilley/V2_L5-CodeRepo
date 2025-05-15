@@ -2,43 +2,69 @@ all:
   children:
     CVP_cluster:
       vars:
-          ansible_user: arista
-          ansible_password: PASSWORD-GOES-HERE
-          ansible_connection: httpapi
-          ansible_httpapi_use_ssl: True
-          ansible_httpapi_validate_certs: False
-          ansible_network_os: eos
-          ansible_httpapi_port: 443
+        ansible_user: admin
+        ansible_password: admin
+        ansible_connection: httpapi
+        ansible_httpapi_use_ssl: True
+        ansible_httpapi_validate_certs: False
+        ansible_network_os: eos
+        ansible_httpapi_port: 443
       hosts: 
         cvp1:
-          ansible_host: 192.168.0.5
-    fabric:
+          ansible_host: 11.255.0.30
+    FABRIC:
       vars:
-        ansible_user: arista
+        ansible_user: admin
         ansible_network_os: eos
-        ansible_password: PASSWORD-GOES-HERE
+        ansible_password: admin
         ansible_connection: httpapi
         ansible_httpapi_use_ssl: True
         ansible_httpapi_validate_certs: False
         ansible_httpapi_port: 443
-    # This section will have Ansible connect via the SSH CLI
-    #     ansible_connection: network_cli
-    #     ansible_user: arista
-    #     ansible_network_os: eos
-    #     ansible_become: yes
-    #     ansible_become_method: enable
-    #     ansible_connection: network_cli
-    #     ansible_network_os: eos
-      children:
-        spines:
-          hosts:
-            spine1:
-            spine2:
-            spine3:
-            spine4:
-        leafs:
-          hosts:
-            leaf1:
-            leaf2:
-            leaf3:
-            leaf4:
+      hosts:
+        spine1:
+          ansible_host: 11.255.0.16
+        spine2:
+          ansible_host: 11.255.0.17
+        spine3:
+          ansible_host: 11.255.0.10
+        spine4:
+          ansible_host: 11.255.0.19
+        leaf1:
+          ansible_host: 11.255.0.20
+        leaf2:
+          ansible_host: 11.255.0.21
+        leaf3:
+          ansible_host: 11.255.0.22
+        leaf4:
+          ansible_host: 11.255.0.23
+        borderleaf1:
+          ansible_host: 11.255.0.14
+        borderleaf2:
+          ansible_host: 11.255.0.15
+    spines:
+      hosts:
+        spine1:
+          ansible_host: 11.255.0.16
+        spine2:
+          ansible_host: 11.255.0.17
+        spine3:
+          ansible_host: 11.255.0.10
+        spine4:
+          ansible_host: 11.255.0.19
+    leafs:
+      hosts:
+        leaf1:
+          ansible_host: 11.255.0.20
+        leaf2:
+          ansible_host: 11.255.0.21
+        leaf3:
+          ansible_host: 11.255.0.22
+        leaf4:
+          ansible_host: 11.255.0.23
+    borderleafs:
+      hosts:
+        borderleaf1:
+          ansible_host: 11.255.0.14
+        borderleaf2:
+          ansible_host: 11.255.0.15
